@@ -1,7 +1,16 @@
+#ifndef THING_H
+#define THING_H
+
+#include <string>
+using namespace std;
+
+//Forward decleration
+class Room;
+
 class Thing {
     
     public:
-        Thing(string name, string desc, int size);
+        Thing(string _name, string _desc, int _size);
         bool moveTo(Room* room);
         string getName();
         string getDesc();
@@ -15,4 +24,6 @@ class Thing {
     protected:
         Room* cur_room;
 
-}
+};
+
+#endif
