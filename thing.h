@@ -1,6 +1,6 @@
 #ifndef THING_H
 #define THING_H
-
+#define NULL 0
 #include <string>
 using namespace std;
 
