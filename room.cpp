@@ -57,3 +57,7 @@ void Room::printThings(Thing* ignore){
         cout << "The Things in the room are: " << *it  << " " <<  endl;
     }
 }
+
+Room* Room::getRoom(string _exit){
+    return exits.find(_exit)->second;
+}

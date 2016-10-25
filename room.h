@@ -23,6 +23,7 @@ class Room {
         void remove(Thing* thing);
         void printExits();
         void printThings(Thing* ignore);
+        Room* getRoom(string _exit);
 
     private:
         string name;

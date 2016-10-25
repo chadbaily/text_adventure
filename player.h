@@ -4,8 +4,7 @@
 #include "room.h"
 #include "thing.h"
 #include <string>
-class Room;
-
+using namespace std;
 class Player : public Agent {
 
     public:

@@ -2,6 +2,7 @@
 #include "room.h"
 #include "thing.h"
 #include "player.h"
+#include "monster.h"
 using namespace std;
 
 int main()
@@ -22,6 +23,10 @@ int main()
 
     josh->moveTo(entrance);
     ryan->moveTo(entrance);
+    
+   // Monster* jack = new Monster ("Jack");
+
+   // jack->moveTo(entrance);
 
     hallway->printExits();
     

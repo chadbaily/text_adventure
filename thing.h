@@ -22,6 +22,9 @@ class Thing {
 
     protected:
         Room* cur_room;
+        void setName(string _name);
+        void setDesc(string _desc);
+        void setSize(int size);
 
 };
 

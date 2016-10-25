@@ -4,12 +4,9 @@
 #include "thing.h"
 using namespace std;
 
-Thing::Thing(string _name, string _desc, int _size){
-    name = _name;
-    desc = _desc;
-    size = _size;
-    cur_room = NULL;
-}
+Thing::Thing(string _name, string _desc, int _size)
+    :name(_name), desc(_desc), size(_size), cur_room(NULL)
+{}
 
 bool Thing::moveTo(Room* room){
     cur_room = room;
@@ -26,4 +23,16 @@ string Thing::getDesc(){
 
 int Thing::getSize(){
     return size;
+}
+
+void Thing::setName(string _name){
+    name = _name;
+}
+
+void Thing::setDesc(string _desc){
+    desc = _desc;
+}
+
+void Thing::setSize(int _size){
+    size = _size;
 }
