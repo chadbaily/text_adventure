@@ -4,12 +4,14 @@
 #include "monster.h"
 #include "player.h"
 #include <string>
-#define NULL 0
+#include <vector>
+#include <set>
+#include <map>
 using namespace std;
 
 class Thing;
 
-class Room{
+class Room {
 
     public:
         Room(string _name, string _desc, int size);
@@ -27,6 +29,6 @@ class Room{
         string desc;
         int size;
         set<Thing*> things;
-        map<string, Room> exits;
+        map<string, Room*> exits;
 };
 #endif

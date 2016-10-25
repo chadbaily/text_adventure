@@ -2,10 +2,9 @@
 #include<string>
 #include "room.h"
 #include "thing.h"
-#define NULL 0
 using namespace std;
 
-Thing::Thing(sting _name, string _desc, int _size){
+Thing::Thing(string _name, string _desc, int _size){
     name = _name;
     desc = _desc;
     size = _size;

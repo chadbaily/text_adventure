@@ -1,5 +1,6 @@
 #include "thing.h"
 #include "game.h"
+#include "agent.h"
 using namespace std;
 
 Agent::Agent(string _name, string _desc, int _size){
