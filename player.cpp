@@ -76,6 +76,7 @@ bool Player::act(){
            cur_room->remove((*search));
            add((*search));
         }
+        cout << "\n" << endl;
     }
     
     if(token[0] == "look")
@@ -92,7 +93,19 @@ bool Player::act(){
         {
             cout << "You currently have: " << (*it)->getName() << ", " << endl;
         }
+        cout << "\n" << endl;
     }
-    
+
+    if(token[0] == "drop")
+    {
+        set<Thing*> things = getThings();
+        auto search = things.find(getThing(token[1]));
+        if(search != things.end())
+        {
+           remove((*search));
+           cur_room->add((*search));
+        }
+        cout << "\n" << endl;
+    } 
     return true;
 }
