@@ -24,8 +24,6 @@ bool Player::act(){
     string blank;
     vector<string> token;
     copy(istream_iterator<string>(iss), istream_iterator<string>(), back_inserter(token));
-    
-
     vector<string> exits = cur_room->getExits();
     
     if(token[0] == "go")
@@ -75,10 +73,8 @@ bool Player::act(){
         auto search = things.find(cur_room->getThing(token[1]));
         if(search != things.end())
         {
-           cout << "you found the thing" << endl;
            cur_room->remove((*search));
            add((*search));
-           printThings(this);
         }
     }
     
@@ -90,7 +86,13 @@ bool Player::act(){
 		cout << "\n" << endl;
     }
 
-
+    if(token[0] == "inventory")
+    {
+        for(set<Thing*>::iterator it = things.begin(); it != things.end(); ++it)
+        {
+            cout << "You currently have: " << (*it)->getName() << ", " << endl;
+        }
+    }
     
     return true;
 }

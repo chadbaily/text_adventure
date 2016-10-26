@@ -114,7 +114,34 @@ int main()
     cout << "Welcome!" << endl;
 
     while(game.step());
-
+	
+	delete stream;
+	delete field;
+	delete house;
+	delete bedroom;
+	delete kitchen;
+	delete hallway;
+	delete living_room;
+	delete cellar;
+	delete patio;
+	delete backyard;
+	delete swingset;
+	delete pool;
+	delete sky;
+	
+	delete josh;
+	delete tracy;
+	delete napolean;
+	delete kafka;
+	delete liberty;
+	delete hoop;
+	delete shovel;
+	delete book;
+	delete towel;
+	delete kid;
+	delete rubber_duck;
+	
+	
     return 0;
 }
 

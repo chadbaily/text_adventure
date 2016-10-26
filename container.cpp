@@ -38,7 +38,6 @@ Thing* Container::getThing(string thing){
     {
         string obj = (*it)->getName();
         transform(obj.begin(), obj.end(), obj.begin(), ::tolower);
-        cout << obj  << endl;
         if(obj == thing)
         {   
             return *it;
