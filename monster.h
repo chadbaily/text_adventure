@@ -4,7 +4,7 @@
 #include "room.h"
 #include "thing.h"
 using namespace std;
-class Room;
+class Container;
 
 class Monster : public Agent {
 

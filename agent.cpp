@@ -11,6 +11,7 @@ Agent::Agent(string _name, string _desc, int _size)
 {}
 bool Agent::walk(string _exit){
  //see if it is a possible exit, and if it is then movie it ?
+    Room* cur_room = (Room*)cur_container;
     vector<string> exits = cur_room->getExits();
     for(unsigned int i = 0; i < exits.size(); i++)
     {

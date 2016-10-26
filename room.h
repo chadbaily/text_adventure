@@ -3,15 +3,14 @@
 #include "thing.h"
 #include "monster.h"
 #include "player.h"
+#include "container.h"
 #include <string>
 #include <vector>
 #include <set>
 #include <map>
 using namespace std;
 
-class Thing;
-
-class Room {
+class Room : public Container {
 
     public:
         Room(string _name, string _desc, int size);
@@ -19,11 +18,7 @@ class Room {
         string getDesc();
         void link(Room* _room, string _exit);
         vector<string> getExits();
-        set<Thing*>  getThings();
-        bool add(Thing* thing);
-        void remove(Thing* thing);
         void printExits();
-        void printThings(Thing* ignore);
         Room* getRoom(string _exit);
 
     private:

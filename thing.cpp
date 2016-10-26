@@ -1,19 +1,20 @@
 #include<iostream>
 #include<string>
 #include "room.h"
+#include "container.h"
 #include "thing.h"
 using namespace std;
 
 Thing::Thing(string _name, string _desc, int _size)
-    :name(_name), desc(_desc), size(_size), cur_room(NULL)
+    :name(_name), desc(_desc), size(_size), cur_container(NULL)
 {}
 
-bool Thing::moveTo(Room* room){
-    if(room->add(this))
+bool Thing::moveTo(Container* container){
+    if(container->add(this))
     {
-        if(cur_room != NULL)
-            cur_room->remove(this);
-        cur_room = room;
+        if(cur_container != NULL)
+            cur_container->remove(this);
+        cur_container = container;
         return true;
     }
     return false;

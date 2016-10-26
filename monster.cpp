@@ -10,9 +10,15 @@ Monster::Monster(string _name)
 {}
 
 bool Monster::act(){
+    Room* cur_room = (Room*)cur_container;
     vector<string> exits = cur_room->getExits();
-  int randNum = rand() % exits.size();
-    
+    if(exits.size() == 0)
+    {
+        return true;
+    }
+    else{
+    int randNum = rand() % exits.size();
     this->moveTo(cur_room->getRoom(exits[randNum]));
     return true;
+    }
 }

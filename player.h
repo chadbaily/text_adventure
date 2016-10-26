@@ -1,11 +1,12 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 #include "agent.h"
-#include "room.h"
 #include "thing.h"
 #include <string>
+#include "container.h"
 using namespace std;
-class Player : public Agent {
+
+class Player : public Agent, public Container {
 
     public:
         Player(string _name, string _desc, int _size);
@@ -13,6 +14,6 @@ class Player : public Agent {
 
 
     private:
-        Room* inventory;
+        Container* inventory;
 };
 #endif

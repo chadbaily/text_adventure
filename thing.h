@@ -4,13 +4,13 @@
 using namespace std;
 
 //Forward decleration
-class Room;
+class Container;
 
 class Thing {
     
     public:
         Thing(string _name, string _desc, int _size);
-        bool moveTo(Room* room);
+        bool moveTo(Container* container);
         string getName();
         string getDesc();
         int getSize();
@@ -21,7 +21,7 @@ class Thing {
         int size;
 
     protected:
-        Room* cur_room;
+        Container* cur_container;
         void setName(string _name);
         void setDesc(string _desc);
         void setSize(int size);
