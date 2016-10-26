@@ -32,6 +32,10 @@ vector<string> Room::getExits(){
     return v;
 }
 
+set<Thing*> Room::getThings(){
+    return things;
+}
+
 bool Room::add(Thing* thing){
     things.insert(thing);
     return true;

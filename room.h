@@ -19,6 +19,7 @@ class Room {
         string getDesc();
         void link(Room* _room, string _exit);
         vector<string> getExits();
+        set<Thing*>  getThings();
         bool add(Thing* thing);
         void remove(Thing* thing);
         void printExits();
