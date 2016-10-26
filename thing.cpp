@@ -9,8 +9,14 @@ Thing::Thing(string _name, string _desc, int _size)
 {}
 
 bool Thing::moveTo(Room* room){
-    cur_room = room;
-    return true;
+    if(room->add(this))
+    {
+        if(cur_room != NULL)
+            cur_room->remove(this);
+        cur_room = room;
+        return true;
+    }
+    return false;
 }
 
 string Thing::getName(){

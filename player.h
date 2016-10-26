@@ -10,5 +10,9 @@ class Player : public Agent {
     public:
         Player(string _name, string _desc, int _size);
         bool act();
+
+
+    private:
+        Room* inventory;
 };
 #endif

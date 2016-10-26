@@ -64,7 +64,14 @@ bool Player::act(){
             //add to inventory
        // }
     }
+    
+    if(token[0] == "look")
+    {
+        cur_room->printThings(this);
+        cur_room->printExits();
+    }
 
- 
+
+    cout << "\n" << endl;
     return true;
 }

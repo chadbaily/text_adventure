@@ -58,7 +58,11 @@ void Room::printThings(Thing* ignore){
     //print it
    for(set<Thing*>::iterator it = things.begin(); it!= things.end(); ++it)
     {
-        cout << "The Things in the room are: " << *it  << " " <<  endl;
+        if (*it == ignore)
+        {
+        }
+        else
+        cout << "The Things in the room are: " << (*it)->getName()  << " " <<  endl;
     }
 }
 
