@@ -90,6 +90,7 @@ bool Player::act(){
         {
            cur_room->remove((*search));
            add((*search));
+           cout << (*search)->getDesc();
         }
         cout << "\n" << endl;
     }
