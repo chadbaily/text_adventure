@@ -14,7 +14,8 @@ class Thing {
         string getName();
         string getDesc();
         int getSize();
-    
+        ~Thing() = default;
+
     private:
         string name;
         string desc;

@@ -12,7 +12,6 @@ class Player : public Agent, public Container {
         Player(string _name, string _desc, int _size);
         bool act();
 
-
     private:
         Container* inventory;
 };

@@ -8,7 +8,8 @@ class Agent : public Thing{
     protected:
         Agent(string _name, string _desc, int _size);
         bool walk(string exit);
-    
+        virtual ~Agent() = default;
+
     public:
         virtual bool act() = 0;
 };

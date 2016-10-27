@@ -27,3 +27,4 @@ bool Agent::walk(string _exit){
 bool Agent::act(){
     return true;
 }
+
