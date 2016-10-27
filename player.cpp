@@ -17,7 +17,7 @@ Player::Player(string _name, string _desc, int _size)
 bool Player::act(){
     string command;
 	Room *cur_room = (Room*)cur_container;
-    cout << "What would you like to do "<< this->getName() << " ?"  << endl;
+    cout << "What would you like to do " << this->getName() << " ?"  << endl;
     getline(cin, command);
     transform(command.begin(), command.end(), command.begin(), ::tolower);
     istringstream iss(command);
@@ -26,6 +26,12 @@ bool Player::act(){
     copy(istream_iterator<string>(iss), istream_iterator<string>(), back_inserter(token));
     vector<string> exits = cur_room->getExits();
     
+    if(token.empty())
+    {
+        cout << "you didn't enter anything!!!" << endl;
+        return true;
+    }
+
     if(token[0] == "go")
     { 
      if(token[1] == "north" && (find(exits.begin(), exits.end(), "north") != exits.end()))
@@ -59,6 +65,15 @@ bool Player::act(){
         cout << "you are now in: " << cur_room->getRoom("west") ->getName() << "\n" << endl;
         return true;
      }
+
+    if(token[1] == "up" && (find(exits.begin(), exits.end(), "up") != exits.end()) && (cur_room->getName() == "Field"))
+     {
+        //this->moveTo(cur_room->getRoom("west"));
+		this->walk("up"); //well its more of like flying...
+        cout << "you are now in: " << cur_room->getRoom("up") ->getName() << "\n" << endl;
+        return true;
+     }
+
      return true;
     }
 
@@ -82,7 +97,21 @@ bool Player::act(){
     if(token[0] == "look")
     {
         cur_room->printThings(this);
-        cur_room->printExits();
+        
+        if(cur_room->getName() == "Hallway")
+        {
+            set<Thing*> things = getThings();
+            auto search = things.find(getThing("torch"));
+            if(search != things.end())
+            {
+                cur_room->printExits("none");
+            }
+            
+            else
+            {
+                cur_room->printExits("Cellar");
+            }
+        }
         cout << cur_room->getDesc() << endl;
 		cout << "\n" << endl;
     }
@@ -96,6 +125,17 @@ bool Player::act(){
         cout << "\n" << endl;
     }
 
+    if(token[0] == "help")
+    {
+        cout << "You have asked for help. Here are some of the commands that you are able to perform." << "\n" << endl;
+        cout << "Look -- this command allows you to see everything in a room. Including a monster!!!" << "\n" << endl;
+        cout << "Go ____ -- Combine this command with: North, South, East, and West if available to move!" << "\n" << endl;
+        cout << "Drop -- Allows you do drop an item in your inventory" << "\n" << endl;
+        cout << "Inventory -- Allows you view what you currently have in your inventory, you may be suprised with what you can carry..." << "\n" <<  endl;
+        cout << "Get -- Allows you get obejects that are in your current room" << "\n" << endl;
+        cout << "Quit -- Quits the game, it ony takes one player!" << "\n" << endl;
+    }
+
     if(token[0] == "drop")
     {
         set<Thing*> things = getThings();
@@ -107,5 +147,6 @@ bool Player::act(){
         }
         cout << "\n" << endl;
     } 
+
     return true;
 }

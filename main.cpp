@@ -22,11 +22,11 @@ int main()
     Room *kitchen = new Room("Kitchen",
                              "A small kitchen, with only a toaster...", 50);
     Room *hallway = new Room("Hallway",
-                              "A long hallway with suspiciously loose boards ...", 50);
+                              "A long, dark hallway with loose floorboards ...", 50);
 	Room *living_room = new Room("Living Room",
                               "A small living room...", 75);
     Room *cellar = new Room("Cellar",
-                             "A stairway under the hallway...", 20);
+                             "A cellar hidden under the hallway...", 20);
     Room *patio = new Room("Patio",
                               "A nice cobblestone paito...", 100);
 	Room *backyard = new Room("Backyard",
@@ -36,7 +36,7 @@ int main()
     Room *pool = new Room("Pool",
                               "A deep pool...", 50);
 	Room *sky = new Room("Sky",
-                              "Well how did you get here?!...", 500);
+                              "Well how did you get here?!...doen't matter, you are now stuck!!", 500);
 							  
 							  
 
@@ -99,6 +99,8 @@ int main()
 	Thing *towel = new Thing("Towel", "A towel...", 10);
 	Thing *kid = new Thing("Kid", "A kid... wait what?", 10);
 	Thing *rubber_duck = new Thing("Rubber Duck", "A rubber duckie...", 10);
+	Thing *torch = new Thing("Torch", "A torch used to light dark places...", 10);
+	Thing *note = new Thing("Note", "You are not expected to understand this, sorry but good try", 10);
 	
 	
     liberty->moveTo(bedroom);
@@ -110,6 +112,8 @@ int main()
 	towel->moveTo(bedroom);
 	kid->moveTo(swingset);
 	rubber_duck->moveTo(pool);
+	torch->moveTo(stream);
+	note->moveTo(cellar);
 
     cout << "Welcome!" << endl;
 
@@ -140,6 +144,8 @@ int main()
 	delete towel;
 	delete kid;
 	delete rubber_duck;
+	delete torch;
+	delete note;
 	
 	
     return 0;

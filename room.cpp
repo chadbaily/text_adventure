@@ -32,11 +32,14 @@ vector<string> Room::getExits(){
     return v;
 }
 
-void Room::printExits(){
+void Room::printExits(string ignore){
     //itterate through the exits and print them
     for(map<string, Room*>::iterator it = exits.begin(); it!= exits.end(); ++it)
     {
         if(it->first == "up")
+        {
+        }
+        if(it->second->getName() == ignore)
         {
         }
         else

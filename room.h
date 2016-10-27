@@ -18,7 +18,7 @@ class Room : public Container {
         string getDesc();
         void link(Room* _room, string _exit);
         vector<string> getExits();
-        void printExits();
+        void printExits(string ignore);
         Room* getRoom(string _exit);
 
     private:
